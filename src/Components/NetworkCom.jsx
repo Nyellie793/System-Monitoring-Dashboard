@@ -14,31 +14,32 @@ const NetworkCom = () => {
         </section>
 
         {/*Stats cards*/}
-        <section className='p-6 grid grid-cols-1 md:grid-cols-3 gap-6'>
-              <Cards
-        icon={<FiUpload />}
-        iconColor="text-blue-500"
-        title="Total Traffic"
-        value="850"
-        unit="GB"
-      />
+        <section className='grid md:grid-cols-3 gap-6'>
+            <Cards
+  variant="stat"
+  icon={<FiUpload className="text-blue-600 text-xl" />}
+  bgColor="bg-blue-100"
+  title="Total Traffic"
+  value="850 GB"
+/>
 
-      {/* Active IPs */}
-      <Cards
-        icon={<FiCpu />}
-        iconColor="text-green-500"
-        title="Active IPs"
-        value="126"
-      />
+{/* Active IPs */}
+<Cards
+  variant="stat"
+  icon={<FiCpu className="text-green-600 text-xl" />}
+  bgColor="bg-green-100"
+  title="Active IPs"
+  value="126"
+/>
 
-      {/* Peak Usage Time */}
-      <Cards
-        icon={<FiClock />}
-        iconColor="text-yellow-500"
-        title="Peak Usage Time"
-        value="4:00"
-        unit="PM"
-      />
+{/* Peak Usage Time */}
+<Cards
+  variant="stat"
+  icon={<FiClock className="text-yellow-600 text-xl" />}
+  bgColor="bg-yellow-100"
+  title="Peak Usage Time"
+  value="4:00 PM"
+/>
         </section>
 
         {/*Charts*/}

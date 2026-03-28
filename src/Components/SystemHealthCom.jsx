@@ -1,5 +1,7 @@
 import React from 'react'
-import Header from './Header/Header'
+import Header from './Header/Header';
+import Card from './Cards';
+import { FiActivity, FiCpu, FiHardDrive } from "react-icons/fi";
 
 const SystemHealthCom = () => {
   return (
@@ -12,9 +14,29 @@ const SystemHealthCom = () => {
 
         {/*Stats cards*/}
         <section className='grid md:grid-cols-3 gap-6'>
-          <div className='bg-white p-6 rounded-2xl shadow-sm'></div>
-          <div className='bg-white p-6 rounded-2xl shadow-sm'></div>
-          <div className='bg-white p-6 rounded-2xl shadow-sm'></div>
+          <Card
+        variant="stat"
+        icon={<FiActivity className="text-blue-600 text-xl" />}
+        bgColor="bg-blue-100"
+        title="CPU"
+        value="65%"
+      />
+
+      <Card
+        variant="stat"
+        icon={<FiCpu className="text-green-600 text-xl" />}
+        bgColor="bg-green-100"
+        title="Memory"
+        value="72%"
+      />
+
+      <Card
+        variant="stat"
+        icon={<FiHardDrive className="text-purple-600 text-xl" />}
+        bgColor="bg-purple-100"
+        title="Disk"
+        value="80%"
+      />
         </section>
 
         {/*Charts*/}

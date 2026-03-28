@@ -14,33 +14,30 @@ const SecurityCom = () => {
         </section>
     
         {/*Stats cards*/}
-        <section className='p-6 grid grid-cols-1 md:grid-cols-3 gap-6'>
+        <section className='grid md:grid-cols-3 gap-6'>
           <Card
-        icon={<FiBell />}
-        iconColor="text-blue-500"
-        title="Total Alerts"
-        value="182"
-      />
+  variant="stat"
+  icon={<FiBell className="text-blue-600 text-xl" />}
+  bgColor="bg-blue-100"
+  title="Total Alerts"
+  value="182"
+/>
 
-      {/* Failed Logins */}
-      <Card
-        icon={<FiAlertTriangle />}
-        iconColor="text-red-500"
-        title="Failed Logins"
-        value="68"
-      />
+<Card
+  variant="stat"
+  icon={<FiAlertTriangle className="text-red-600 text-xl" />}
+  bgColor="bg-red-100"
+  title="Failed Logins"
+  value="68"
+/>
 
-      {/* Suspicious Activity */}
-      <Card
-        icon={<FiShield />}
-        iconColor="text-yellow-500"
-        title="Suspicious Activity"
-        value="15%"
-        indicator={{
-          icon: <FiArrowUp className="text-red-500" />,
-          text: "7%",
-        }}
-      />
+<Card
+  variant="stat"
+  icon={<FiShield className="text-yellow-600 text-xl" />}
+  bgColor="bg-yellow-100"
+  title="Suspicious Activity"
+  value="15%"
+/>
         </section>
 
         {/*Charts*/}
