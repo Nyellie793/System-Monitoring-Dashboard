@@ -11,7 +11,7 @@ const Cards = ({
   variant = "default",
 }) => {
   
-  // 🔹 STAT VARIANT (like your screenshot)
+  // 🔹 STAT VARIANT (horizontal cards)
   if (variant === "stat") {
     return (
       <div className="bg-gray-100 rounded-2xl p-6 flex items-center gap-4 shadow-sm hover:shadow-md transition">
@@ -24,16 +24,41 @@ const Cards = ({
         {/* Text */}
         <div>
           <p className="text-sm text-gray-500">{title}</p>
-          <p className="text-2xl font-bold text-gray-900">{value}</p>
+
+          <div className="flex items-center gap-2">
+            {/* Value + Unit */}
+            <p className="text-2xl font-bold text-gray-900">
+              {value}{" "}
+              {unit && (
+                <span className="text-sm font-normal text-gray-500">
+                  {unit}
+                </span>
+              )}
+            </p>
+
+            {/* Indicator */}
+            {indicator && (
+              <span
+                className={`flex items-center text-sm font-medium ${
+                  indicator.type === "increase"
+                    ? "text-red-500"
+                    : "text-green-500"
+                }`}
+              >
+                {indicator.icon}
+                {indicator.text}
+              </span>
+            )}
+          </div>
         </div>
 
       </div>
     );
   }
 
-  // 🔹 DEFAULT VARIANT (your existing cards)
+  // 🔹 DEFAULT VARIANT (vertical cards)
   return (
-    <div className="bg-white shadow-md rounded-xl p-5 flex flex-col items-center gap-3 min-h-45 hover:shadow-lg transition-shadow">
+    <div className="bg-white shadow-md rounded-xl p-5 flex flex-col items-center gap-3 min-h-[180px] hover:shadow-lg transition-shadow">
       
       <div className="flex items-center gap-3">
         <div className={`text-2xl ${iconColor}`}>{icon}</div>
